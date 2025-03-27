@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="400dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+
+    <!-- Background -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M0,0h400v400h-400z"/>
+
+    <!-- Grid Pattern -->
+    <path
+        android:strokeColor="#BBDEFB"
+        android:strokeWidth="0.5"
+        android:pathData="M40,0v400 M80,0v400 M120,0v400 M160,0v400 M200,0v400 M240,0v400 M280,0v400 M320,0v400 M360,0v400
+                         M0,40h400 M0,80h400 M0,120h400 M0,160h400 M0,200h400 M0,240h400 M0,280h400 M0,320h400 M0,360h400"/>
+
+    <!-- Main Roads -->
+    <path
+        android:strokeColor="#1976D2"
+        android:strokeWidth="3"
+        android:pathData="M0,200h400 M200,0v400"/>
+
+    <!-- Secondary Roads -->
+    <path
+        android:strokeColor="#2196F3"
+        android:strokeWidth="2"
+        android:pathData="M80,80l240,240 M320,80l-240,240 M120,0v400 M280,0v400 M0,120h400 M0,280h400"/>
+
+    <!-- Local Areas - Light Fills -->
+    <path
+        android:fillColor="#E1F5FE"
+        android:strokeColor="#4FC3F7"
+        android:strokeWidth="1"
+        android:pathData="M40,40h120v120h-120z M240,240h120v120h-120z"/>
+
+    <!-- Parks and Green Areas -->
+    <path
+        android:fillColor="#C8E6C9"
+        android:strokeColor="#81C784"
+        android:strokeWidth="1"
+        android:pathData="M60,60h80v80h-80z M260,260h80v80h-80z"/>
+
+    <!-- Water Bodies -->
+    <path
+        android:fillColor="#B3E5FC"
+        android:strokeColor="#4FC3F7"
+        android:strokeWidth="1"
+        android:pathData="M280,100c0,33.1-26.9,60-60,60s-60-26.9-60-60s26.9-60,60-60S280,66.9,280,100"/>
+
+    <!-- Buildings -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#BDBDBD"
+        android:strokeWidth="1"
+        android:pathData="M150,150h30v30h-30z M190,150h30v30h-30z M150,190h30v30h-30z M190,190h30v30h-30z"/>
+
+    <!-- Location Markers for Jobs -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M100,100m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"/>
+    <path
+        android:strokeColor="#FFA000"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M100,100m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0"/>
+
+    <!-- Location Markers for NGOs -->
+    <path
+        android:fillColor="#7CB342"
+        android:pathData="M300,300m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"/>
+    <path
+        android:strokeColor="#7CB342"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M300,300m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0"/>
+
+    <!-- Location Markers for Hospitals -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M200,200m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"/>
+    <path
+        android:strokeColor="#E53935"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M200,200m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0"/>
+
+    <!-- City Labels -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M85,85l6,-15l6,15h-12z M285,285l6,-15l6,15h-12z M185,185l6,-15l6,15h-12z"/>
+
+    <!-- Area Names -->
+    <path
+        android:fillColor="#1976D2"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M70,50h40v15h-40z M270,250h40v15h-40z M170,170h40v15h-40z"/>
+</vector> 
