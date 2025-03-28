@@ -110,7 +110,13 @@ fun JobListingsScreen(navController: NavController) {
                      job.title.contains(searchQuery, ignoreCase = true) ||
                      job.description.contains(searchQuery, ignoreCase = true))
                 }) { job ->
-                    JobCard(job = job, onJobClick = { /* TODO: Implement job details */ })
+                    JobCard(
+                        job = job,
+                        onJobClick = {
+                            // Navigate to job details
+                            navController.navigate("job_details/${job.id}")
+                        }
+                    )
                 }
             }
         }

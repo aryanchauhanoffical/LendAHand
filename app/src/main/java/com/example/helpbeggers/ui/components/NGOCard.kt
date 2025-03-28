@@ -1,6 +1,8 @@
 package com.example.helpbeggers.ui.components
 
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -9,11 +11,13 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.helpbeggers.data.NGO
 
 @Composable
 fun NGOCard(ngo: NGO) {
+    val context = LocalContext.current
     Card(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -78,11 +82,18 @@ fun NGOCard(ngo: NGO) {
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
-                IconButton(onClick = { /* TODO: Implement call action */ }) {
+                IconButton(
+                    onClick = {
+                        // Launch phone dialer
+                        val intent = Intent(Intent.ACTION_DIAL).apply {
+                            data = Uri.parse("tel:${ngo.contactNumber}")
+                        }
+                        context.startActivity(intent)
+                    }
+                ) {
                     Icon(
                         imageVector = Icons.Default.Phone,
-                        contentDescription = "Call",
-                        tint = MaterialTheme.colorScheme.primary
+                        contentDescription = "Call NGO"
                     )
                 }
             }

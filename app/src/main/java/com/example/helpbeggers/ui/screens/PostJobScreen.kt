@@ -21,6 +21,42 @@ fun PostJobScreen(navController: NavController) {
     var requirements by remember { mutableStateOf("") }
     var location by remember { mutableStateOf("") }
 
+    // Form validation function
+    fun validateJobForm(): Boolean {
+        if (title.isBlank()) {
+            // Show error
+            return false
+        }
+        if (description.isBlank()) {
+            // Show error
+            return false
+        }
+        if (pay.isBlank() || pay.toDoubleOrNull() == null) {
+            // Show error
+            return false
+        }
+        if (selectedJobType == null) {
+            // Show error
+            return false
+        }
+        if (requirements.isBlank()) {
+            // Show error
+            return false
+        }
+        if (location.isBlank()) {
+            // Show error
+            return false
+        }
+        return true
+    }
+
+    // Function to post job
+    fun postJob() {
+        // TODO: Implement actual job posting logic
+        // For now, just navigate back
+        navController.navigateUp()
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -129,17 +165,14 @@ fun PostJobScreen(navController: NavController) {
 
             // Submit Button
             Button(
-                onClick = { /* TODO: Implement job posting */ },
-                modifier = Modifier.fillMaxWidth(),
-                enabled = title.isNotBlank() && description.isNotBlank() && 
-                         pay.isNotBlank() && selectedJobType != null && 
-                         requirements.isNotBlank() && location.isNotBlank()
+                onClick = {
+                    // Validate and post job
+                    if (validateJobForm()) {
+                        postJob()
+                    }
+                },
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Text(
-                    text = "📝",
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.padding(end = 8.dp)
-                )
                 Text("Post Job")
             }
         }
